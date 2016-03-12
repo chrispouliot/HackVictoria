@@ -12,8 +12,22 @@ def home():
 
 
 @app.route('/talk')
+def talk():
+    return render_template('talk.html')
+
+
+@app.route('/search')
 def search():
     search_term = request.args.get('search')
+
+    if search_term:
+        # Do search
+        results = 'bla'
+
+    if not search_term or not results:
+        return 'Could not find any results'
+
+    return results
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
