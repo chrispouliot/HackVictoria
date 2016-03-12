@@ -46,14 +46,29 @@ header a:hover{
   text-decoration: line-through;
 }
 /* Twitter */
+.Twitter{
+  float: left;
+}
 .Twitter h1{
   float: left;
 }
 /* Google */
+.Google{
+  float: right;
+}
 .Google h1{
   float: right;
 }
 /* Container */
 .container{
   padding-top: 10%;
+}
+/* Boxes */
+.twitterbox{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.googlebox{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
