@@ -28,6 +28,7 @@ header h2{
   float: right;
   margin-right: 1%;
 }
+
 /* Shadow ID */
 #shadow{
   -moz-box-shadow: 0px 0px 11px rgba(0,0,0,1);
@@ -36,6 +37,7 @@ header h2{
   z-index: 999;
   position: fixed;
 }
+
 /* Links */
 header a{
   color: #666362;
@@ -46,9 +48,12 @@ header a:hover{
   text-decoration: line-through;
 }
 
+<<<<<<< HEAD
 ul {
     list-style-type: none;
 }
+=======
+>>>>>>> 6df0f404a13d17b3225b4fcea806b258de758fb1
 /* Twitter */
 .Twitter{
   float: left;
@@ -56,6 +61,7 @@ ul {
 .Twitter h1{
   float: left;
 }
+
 /* Google */
 .Google{
   float: right;
@@ -63,16 +69,27 @@ ul {
 .Google h1{
   float: right;
 }
+
 /* Container */
 .container{
   padding-top: 10%;
 }
+
 /* Boxes */
-.twitterbox{
+.twitterheader{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
-.googlebox{
+.googleheader{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+}
+
+/* Search box */
+#searchbox{
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  width: 50%;
+  height: 10%;
 }
