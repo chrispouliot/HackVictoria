@@ -31,21 +31,24 @@ def search():
     if search_term:
         print search_term
         print urllib.quote_plus(search_term)
-        url = "https://api.twitter.com/1.1/search/tweets.json?q=" + urllib.quote_plus(search_term)
+        geofence = "48.407326,-123.329773,10mi"
+        url = "https://api.twitter.com/1.1/search/tweets.json?q=%s" % urllib.quote_plus(search_term)
+        url += "&geocode=%s" % geofence
         response, data = client.request(url)
         json_data = json.loads(data)
-
-        for tweet in json_data['statuses']:
-            created = tweet.get('created_at')
-            splt = created.split(' ')
-            # Their date is in "Sat March 2nd 00:00... 2016", so take March 2nd 2016
-            created = '%s %s %s' % (splt[1], splt[2], splt[-1])
-            fmt_tweet = {
-                'text': tweet.get('text'),
-                'created': created,
-                'screen_name': tweet['user'].get('name')
-            }
-            tweets.append(fmt_tweet)
+        statuses = json_data.get('statuses')
+        if statuses:
+            for tweet in json_data.get('statuses'):
+                created = tweet.get('created_at')
+                splt = created.split(' ')
+                # Their date is in "Sat March 2nd 00:00... 2016", so take March 2nd 2016
+                created = '%s %s %s' % (splt[1], splt[2], splt[-1])
+                fmt_tweet = {
+                    'text': tweet.get('text'),
+                    'created': created,
+                    'screen_name': tweet['user'].get('name')
+                }
+                tweets.append(fmt_tweet)
         print vars(response)
         print tweets
 
