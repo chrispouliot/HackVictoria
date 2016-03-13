@@ -48,12 +48,11 @@ header a:hover{
   text-decoration: line-through;
 }
 
-<<<<<<< HEAD
+/* Ul */
 ul {
     list-style-type: none;
 }
-=======
->>>>>>> 6df0f404a13d17b3225b4fcea806b258de758fb1
+
 /* Twitter */
 .Twitter{
   float: left;
