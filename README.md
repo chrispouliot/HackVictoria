@@ -11,7 +11,6 @@ FrontEnd: Dominique Charlebois
 
 
 Stack: 
-*HTML/Javascript
 
-
-*Flask Python Server
+* HTML/Javascript
+* Flask Python Server
