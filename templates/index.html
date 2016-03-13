@@ -14,20 +14,50 @@
   </head>
   <body>
     <!-- Main Body Contents -->
-    <div class="container">
-      <!-- Place Holder-->
-      <h1>Talk About It</h1>
+    <div id="search_page">
+        <div class="container">
+          <!-- Place Holder-->
+          <h1>Talk About It</h1>
 
-      <!-- Form Submission -->
-      <input type="text" id="searchbox" placeholder="search">
-      <button id="search">Search</button>
+          <!-- Form Submission -->
+          <input type="text" id="searchbox" placeholder="search">
+          <button id="search">Search</button>
 
+        </div>
     </div>
 
-    <!-- Bootstrap Script -->
-    <script src="static/js/bootstrap.min.js"></script>
+    <!-- Search -->
+    <div id="result_page" style="display:none;">
+        <header id="shadow">
+          <nav class="flex flex-spread">
+            <h1 class="search">Searched Term: ""</h1>
+            <h2 class="logo"><a href="#" target="_blank">TalkAboutIt</a></h2>
+          </nav>
+        </header>
+        <!-- Content -->
+        <div class="container">
+
+          <!-- Twitter Section -->
+          <section class="Twitter">
+            <h1>Twitter Feed</h1>
+            <div class="twitterbox">
+            </div>
+          </section>
+
+          <!-- Google Plus Section-->
+          <section class="Google">
+            <h1>Google Feed</h1>
+            <div class="googlebox">
+            </div>
+          </section>
+
+        </div>
+    <div>
+
     <!-- jQuery Script -->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Script -->
+    <script src="static/js/bootstrap.min.js"></script>
     <!-- General Javascript -->
     <script src="static/js/app.js"></script>
   </body>

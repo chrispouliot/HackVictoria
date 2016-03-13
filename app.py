@@ -1,6 +1,7 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, request
 
+import json
 import oauth2 as oauth
 import os
 import urllib
@@ -18,11 +19,6 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/talk')
-def talk():
-    return render_template('talk.html')
-
-
 @app.route('/search')
 def search():
     consumer = oauth.Consumer(key=CONSUMER_KEY, secret=CONSUMER_SECRET)
@@ -36,11 +32,20 @@ def search():
         print urllib.quote_plus(search_term)
         url = "https://api.twitter.com/1.1/search/tweets.json?q=" + urllib.quote_plus(search_term)
         response, data = client.request(url)
+        json_data = json.loads(data)
 
+        tweets = []
+        for tweet in json_data['statuses']:
+            fmt_tweet = {
+                'text': tweet.get('text'),
+                'created': tweet.get('created_at'),
+                'screen_name': tweet['user'].get('name')
+            }
+            tweets.append(fmt_tweet)
         print vars(response)
-        print data
+        print tweets
 
-        results = data
+        results = json.dumps(tweets)
 
     if not search_term or not results:
         return 'Could not find any results'

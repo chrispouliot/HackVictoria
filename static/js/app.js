@@ -1,7 +1,6 @@
 var display_results = function(results) {
     console.log("Display results");
     console.log(results);
-    alert(results)
 }
 
 var search_talk = function(search_term) {
@@ -16,8 +15,9 @@ var search_talk = function(search_term) {
     .fail(function() {
         console.log("IT FAILED");
     })
-    .always(function() {
-        window.location.assign("/talk");
+    .always(function () {
+        $("#search_page").toggle()
+        $("#result_page").toggle()
     });
 }
 
