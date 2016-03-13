@@ -78,3 +78,12 @@ header a:hover{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
+
+/* Search box */
+#searchbox{
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  width: 50%;
+  height: 10%;
+}
