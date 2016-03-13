@@ -26,7 +26,7 @@ def search():
     client = oauth.Client(consumer, access_token)
 
     search_term = request.args.get("search")
-    twitter = None
+    tweets = []
 
     if search_term:
         print search_term
@@ -35,7 +35,6 @@ def search():
         response, data = client.request(url)
         json_data = json.loads(data)
 
-        tweets = []
         for tweet in json_data['statuses']:
             created = tweet.get('created_at')
             splt = created.split(' ')
@@ -50,9 +49,7 @@ def search():
         print vars(response)
         print tweets
 
-        twitter = tweets
-
-    return jsonify(tweets=twitter)
+    return jsonify(tweets=tweets)
 
 
 if __name__ == '__main__':
