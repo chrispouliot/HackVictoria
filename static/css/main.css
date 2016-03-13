@@ -94,6 +94,11 @@ ul {
   height: 10%;
 }
 
+/* Search Box re-navigation */
 #search_term {
     color: #4d4dff;
+}
+#search_term:hover{
+  cursor: hand;
+  cursor: pointer;
 }
