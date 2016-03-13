@@ -5,7 +5,6 @@ body{
   -webkit-box-shadow: inset 0 8px 4px -4px #ddd;
   -moz-box-shadow: inset 0 8px 4px -4px #ddd;
   box-shadow: inset 0 8px 4px -4px #ddd;
-  background-repeat: no-repeat;
 }
 
 /* Header */
@@ -74,6 +73,8 @@ ul {
 /* Container */
 .container{
   padding-top: 100px;
+  background-repeat: no-repeat;
+  background-image: url("TalkAboutIt.png");
 }
 
 /* Boxes */
@@ -106,6 +107,7 @@ ul {
 
 /* Image */
 img{
+  opacity: 50%;
   padding-top: 10px;
   height: 100%;
   width: 100%;
