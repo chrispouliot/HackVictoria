@@ -64,11 +64,11 @@ header a:hover{
   padding-top: 10%;
 }
 /* Boxes */
-.twitterbox{
+.twitterheader{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
-.googlebox{
+.googleheader{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
