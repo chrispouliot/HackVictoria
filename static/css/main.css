@@ -93,3 +93,7 @@ ul {
   width: 50%;
   height: 10%;
 }
+
+#search_term {
+    color: #4d4dff;
+}

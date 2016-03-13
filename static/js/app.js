@@ -1,3 +1,8 @@
+function toggle() {
+    $("#search_page").toggle()
+    $("#result_page").toggle()
+}
+
 var create_list_item = function(result_item) {
     var $li = $(document.createElement('li'));
     var $p_text = $(document.createElement('p'));
@@ -37,8 +42,7 @@ var search_talk = function(search_term) {
         console.log("IT FAILED");
     })
     .always(function () {
-        $("#search_page").toggle()
-        $("#result_page").toggle()
+        toggle();
         $("#search_term").text(search_term)
     });
 }
@@ -46,4 +50,8 @@ var search_talk = function(search_term) {
 $("#search").on('click', function() {
     var search_value = $("#searchbox").val();
     search_talk(search_value);
+});
+
+$("#search_term").on('click', function() {
+    toggle();
 });
