@@ -62,14 +62,6 @@ ul {
   float: left;
 }
 
-/* Google */
-.Google{
-  float: right;
-}
-.Google h1{
-  float: right;
-}
-
 /* Container */
 .container{
   padding-top: 100px;
@@ -79,10 +71,6 @@ ul {
 
 /* Boxes */
 .twitterheader{
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-}
-.googleheader{
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
@@ -107,8 +95,7 @@ ul {
 
 /* Image */
 img{
-  opacity: 50%;
-  padding-top: 10px;
+  opacity: 0.1;
   height: 100%;
   width: 100%;
 }
