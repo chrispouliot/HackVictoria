@@ -1,9 +1,13 @@
 function toggle() {
+    if($("#result_page").is(":visible")) {
+        $("#tweet_list").empty();
+    }
     $("#search_page").toggle()
     $("#result_page").toggle()
 }
 
 var create_list_item = function(result_item) {
+    // Shitty way to build the list. Need to use a real framework next time
     var $li = $(document.createElement('li'));
     var $p_text = $(document.createElement('p'));
     var $h3_title = $(document.createElement('h3'));

@@ -21,6 +21,7 @@ def home():
 
 @app.route('/search')
 def search():
+    # OAuth setup
     consumer = oauth.Consumer(key=CONSUMER_KEY, secret=CONSUMER_SECRET)
     access_token = oauth.Token(key=ACCESS_KEY, secret=ACCESS_SECRET)
     client = oauth.Client(consumer, access_token)
@@ -29,11 +30,11 @@ def search():
     tweets = []
 
     if search_term:
-        print search_term
-        print urllib.quote_plus(search_term)
+        # Build query string
         geofence = "48.407326,-123.329773,10mi"
         url = "https://api.twitter.com/1.1/search/tweets.json?q=%s" % urllib.quote_plus(search_term)
         url += "&geocode=%s" % geofence
+        # GET Twitter API
         response, data = client.request(url)
         json_data = json.loads(data)
         statuses = json_data.get('statuses')
@@ -49,8 +50,6 @@ def search():
                     'screen_name': tweet['user'].get('name')
                 }
                 tweets.append(fmt_tweet)
-        print vars(response)
-        print tweets
 
     return jsonify(tweets=tweets)
 
