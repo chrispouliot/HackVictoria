@@ -1,5 +1,5 @@
 # import the Flask class from the flask module
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 
 import json
 import oauth2 as oauth
@@ -26,6 +26,8 @@ def search():
     client = oauth.Client(consumer, access_token)
 
     search_term = request.args.get("search")
+    twitter = None
+    google = None
 
     if search_term:
         print search_term
@@ -36,21 +38,21 @@ def search():
 
         tweets = []
         for tweet in json_data['statuses']:
+            created = tweet.get('created_at')
+            splt = created.split(' ')
+            created = '%s %s %s' % (splt[1], splt[2], splt[-1])
             fmt_tweet = {
                 'text': tweet.get('text'),
-                'created': tweet.get('created_at'),
+                'created': created,
                 'screen_name': tweet['user'].get('name')
             }
             tweets.append(fmt_tweet)
         print vars(response)
         print tweets
 
-        results = json.dumps(tweets)
+        twitter = tweets
 
-    if not search_term or not results:
-        return 'Could not find any results'
-
-    return results
+    return jsonify(tweets=twitter, google=google)
 
 
 if __name__ == '__main__':

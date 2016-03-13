@@ -45,6 +45,10 @@ header a:hover{
   color: #6D7B8D;
   text-decoration: line-through;
 }
+
+ul {
+    list-style-type: none;
+}
 /* Twitter */
 .Twitter{
   float: left;
