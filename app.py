@@ -27,7 +27,6 @@ def search():
 
     search_term = request.args.get("search")
     twitter = None
-    google = None
 
     if search_term:
         print search_term
@@ -40,6 +39,7 @@ def search():
         for tweet in json_data['statuses']:
             created = tweet.get('created_at')
             splt = created.split(' ')
+            # Their date is in "Sat March 2nd 00:00... 2016", so take March 2nd 2016
             created = '%s %s %s' % (splt[1], splt[2], splt[-1])
             fmt_tweet = {
                 'text': tweet.get('text'),
@@ -52,7 +52,7 @@ def search():
 
         twitter = tweets
 
-    return jsonify(tweets=twitter, google=google)
+    return jsonify(tweets=twitter)
 
 
 if __name__ == '__main__':
