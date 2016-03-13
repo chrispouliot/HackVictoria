@@ -102,3 +102,8 @@ ul {
   cursor: hand;
   cursor: pointer;
 }
+
+.logopage{
+  background-image: url(static/images/TalkAboutIt.png);
+  opacity: 50%;
+}
