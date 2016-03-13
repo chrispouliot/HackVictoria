@@ -39,6 +39,7 @@ var search_talk = function(search_term) {
     .always(function () {
         $("#search_page").toggle()
         $("#result_page").toggle()
+        $("#search_term").text(search_term)
     });
 }
 
