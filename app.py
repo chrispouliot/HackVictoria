@@ -31,7 +31,9 @@ def search():
 
     if search_term:
         # Build query string
-        geofence = "48.407326,-123.329773,10mi"
+        # Geofence to Victoria, BC (We could make this based on user location)
+        geofence = "48.407326,-123.329773,15mi"
+        # Add search term to query string and url encode it
         url = "https://api.twitter.com/1.1/search/tweets.json?q=%s" % urllib.quote_plus(search_term)
         url += "&geocode=%s" % geofence
         # GET Twitter API
@@ -39,7 +41,7 @@ def search():
         json_data = json.loads(data)
         statuses = json_data.get('statuses')
         if statuses:
-            for tweet in json_data.get('statuses'):
+            for tweet in statuses:
                 created = tweet.get('created_at')
                 splt = created.split(' ')
                 # Their date is in "Sat March 2nd 00:00... 2016", so take March 2nd 2016
