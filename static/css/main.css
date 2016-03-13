@@ -9,6 +9,7 @@ body{
 
 /* Header */
 header{
+  padding-bottom: 0;
   position: fixed;
   overflow: hidden;
   background-color: #FFFFFF;
@@ -71,7 +72,7 @@ ul {
 
 /* Container */
 .container{
-  padding-top: 10%;
+  padding-top: 100px;
 }
 
 /* Boxes */
