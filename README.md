@@ -4,10 +4,10 @@
 ##TalkAboutIt
 
 
-Backend: Christophe Pouliot
+Backend: Christophe Pouliot (FullStack Dev)
 
 
-FrontEnd: Dominique Charlebois
+FrontEnd: Dominique Charlebois (Computer Science Student)
 
 
 Stack: 
