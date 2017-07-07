@@ -1,16 +1,18 @@
 # HackVictoria
 
+## TalkAboutIt
 
-##TalkAboutIt
+Hack made for HackVictoria 2016. We did not finish this as we were volunteering during the event. 
 
+### Backend 
 
-Backend: Christophe Pouliot (FullStack Dev)
+Christophe Pouliot
 
+### FrontEnd
 
-FrontEnd: Dominique Charlebois (Computer Science Student)
+Dominique Charlebois
 
-
-Stack: 
+### Stack: 
 
 * HTML/Javascript
 * Flask Python Server
